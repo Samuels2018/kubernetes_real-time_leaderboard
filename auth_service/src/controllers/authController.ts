@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 import jwt from 'jsonwebtoken';
-import { UserModel } from '../models/userModel';
+import {User as UserModel } from '../models';
 import { config } from '../../../shared/config';
 
 export const registerUser = async (req: Request, res: Response) => {

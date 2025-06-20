@@ -1,6 +1,6 @@
 import express from 'express';
 import {config} from '../../shared/config';
-import amqp from 'amqplib/callback_api';
+import amqp from 'amqplib';
 
 
 
@@ -13,8 +13,8 @@ export const connectToRabbitMQ = async () => {
   try {
     const conn = await amqp.connect(config.rabbitMQ.url);
     channel = await conn.createChannel();
-    await channel.assertQueue(config.rabbitMQ.exchange, 'direct', {
-      dureble: true,
+    await channel.assertExchange(config.rabbitMQ.exchange, 'direct', {
+      durable: true,
     })
 
     console.log('Connected to RabbitMQ');

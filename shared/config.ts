@@ -1,4 +1,35 @@
 import { env } from "process";
+import { Types } from 'mongoose';
+
+export type UserId = Types.ObjectId | string;
+
+export interface LeaderboardEntry {
+  userId: UserId;
+  username?: string; // Puede ser poblado en consultas
+  score: number;
+  rank: number;
+}
+
+export interface LeaderboardPeriod {
+  start: Date;
+  end: Date;
+}
+
+export interface GameScore {
+  gameId: string;
+  score: number;
+  timestamp: Date;
+}
+
+export interface UserProfile {
+  userId: UserId;
+  username: string;
+  email: string;
+  overallRank: number;
+  overallScore: number;
+  topScores: GameScore[];
+}
+
 
 interface RabbitMQConfig {
   url: string;
