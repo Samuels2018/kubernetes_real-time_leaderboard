@@ -1,10 +1,10 @@
 import { env } from "process";
-import { Types } from 'mongoose';
+//import { Types } from 'mongoose';
 
-export type UserId = Types.ObjectId | string;
+//export type UserId = Types.ObjectId | string;
 
 export interface LeaderboardEntry {
-  userId: UserId;
+  //userId: UserId;
   username?: string; // Puede ser poblado en consultas
   score: number;
   rank: number;
@@ -22,7 +22,7 @@ export interface GameScore {
 }
 
 export interface UserProfile {
-  userId: UserId;
+  //userId: UserId;
   username: string;
   email: string;
   overallRank: number;

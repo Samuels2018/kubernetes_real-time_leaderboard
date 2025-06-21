@@ -27,10 +27,10 @@
 
     /* Modules */
     "module": "commonjs",                                /* Specify what module code is generated. */
-    "rootDir": ".",                                  /* Specify the root folder within your source files. */
+    "rootDir": "../..",                                  /* Specify the root folder within your source files. */
     // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
-    // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
-    // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
+    //"baseUrl": ".",                                  /* Specify the base directory to resolve non-relative module names. */
+    //"paths": {"@shared/*": ["../../shared/*"]},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
     "types": ["node", "express", "cors"],                                      /* Specify type package names to be included without being referenced in a source file. */
@@ -70,7 +70,7 @@
     // "newLine": "crlf",                                /* Set the newline character for emitting files. */
     // "stripInternal": true,                            /* Disable emitting declarations that have '@internal' in their JSDoc comments. */
     // "noEmitHelpers": true,                            /* Disable generating custom helper functions like '__extends' in compiled output. */
-    // "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
+    "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
     // "preserveConstEnums": true,                       /* Disable erasing 'const enum' declarations in generated code. */
     // "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
 
@@ -90,7 +90,7 @@
     // "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
     // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
     // "strictBindCallApply": true,                      /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
-    "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */
+    // "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */
     // "strictBuiltinIteratorReturn": true,              /* Built-in iterators are instantiated with a 'TReturn' type of 'undefined' instead of 'any'. */
     // "noImplicitThis": true,                           /* Enable error reporting when 'this' is given the type 'any'. */
     // "useUnknownInCatchVariables": true,               /* Default catch clause variables as 'unknown' instead of 'any'. */
@@ -112,11 +112,7 @@
   },
   "include": [
     "src/**/*",
-    "api_service/**/*",
-    "auth_service/**/*",
-    "score_service/**/*",
-    "realtime_service/**/*",
-    "shared/**/*"
+    "../../shared/**/*" 
   ],
   "exclude": ["node_modules"]
 }

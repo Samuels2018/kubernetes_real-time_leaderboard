@@ -1,6 +1,6 @@
 import {getChannel} from '../index';
 import {config} from '../../../shared/config';
-import {ScoreModel} from './models/score';
+import {Score as ScoreModel} from '../models';
 
 export const startConsumer = async () => {
   try {

@@ -1,12 +1,10 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import jwt from 'jsonwebtoken';
-import { config } from '../../shared/config';
+import cors from 'cors';
 import authRoutes from './routes/router';
-import e from 'express';
 
 const app = express();
 app.use(express.json());
+app.use(cors({}));
 
 app.use('/api/auth', authRoutes);
 

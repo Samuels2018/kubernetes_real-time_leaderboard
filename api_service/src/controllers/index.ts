@@ -1,13 +1,13 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import axios from 'axios';
 
-export const processingScores = async (req: Request, res: Response, next: NextFunction) => {
+export const processingScores = async (req: Request, res: Response) => {
   try {
     const {gameId, score} = req.body;
     const userId = req.user._id;
 
     if (!gameId || !score) {
-      return res.status(400).json({ error: 'Game ID and score are required' });
+      res.status(400).json({ error: 'Game ID and score are required' });
     }
 
     // En producción, publicarías en RabbitMQ en lugar de llamar directamente
@@ -17,7 +17,7 @@ export const processingScores = async (req: Request, res: Response, next: NextFu
 
   } catch (err) {
     console.error('Error processing scores:', err);
-    next(err);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 }
 

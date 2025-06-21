@@ -1,10 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 import {config} from '../../shared/config';
 import amqp from 'amqplib';
 
 
 
 const app = express();
+app.use(cors({}));
 app.use(express.json());
 
 let channel: amqp.Channel;

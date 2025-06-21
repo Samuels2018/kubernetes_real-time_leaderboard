@@ -1,9 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 import http from 'http';
 import {Server } from 'socket.io';
 import { getTopPlayers, getUserRank } from '../redis';
 
 const app = express();
+app.use(cors({origin: '*'}));
 const server = http.createServer(app);
 export const io = new Server(server, {
   cors: {
